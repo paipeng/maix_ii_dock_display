@@ -8,6 +8,8 @@ Prepare:
 3. cmake > v3.9
 
 
+Display size:
+240x240
 
 
 
