@@ -19,6 +19,7 @@ int main(int argc, char **argv)
   struct libmaix_disp *disp = libmaix_disp_create(0);
   if (disp)
   {
+    printf("disp size: %d-%d\n", disp->width, disp->height);
     libmaix_image_t *rgb888 = libmaix_image_create(disp->width, disp->height, LIBMAIX_IMAGE_MODE_RGB888, LIBMAIX_IMAGE_LAYOUT_HWC, NULL, true);
     if (rgb888)
     {
