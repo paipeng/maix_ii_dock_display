@@ -25,11 +25,12 @@ int main(int argc, char **argv)
     {
       printf("w %d h %d p %d \r\n", rgb888->width, rgb888->height, rgb888->mode);
 
-      libmaix_cv_image_draw_rectangle(rgb888, 0, 0, 240, 240, MaixColor(255, 127, 255), -1);
+      //libmaix_cv_image_draw_rectangle(rgb888, 0, 0, 240, 240, MaixColor(255, 127, 255), -1);
 
-      libmaix_cv_image_draw_image_open(rgb888, 20, 20, "/home/res/logo.png", 1.0);
+      //libmaix_cv_image_draw_image_open(rgb888, 20, 20, "/home/res/logo.png", 1.0);
+      libmaix_cv_image_draw_image_open(rgb888, 0, 0, "/home/res/charlotte-s.bmp", 1.0);
 
-      libmaix_cv_image_draw_image_open(rgb888, 40, 100, "/home/res/face.png", -1.0);
+      //libmaix_cv_image_draw_image_open(rgb888, 40, 100, "/home/res/face.png", -1.0);
 #if 0
 
       libmaix_image_t *tmp = libmaix_image_create(80, 80, rgb888->mode, LIBMAIX_IMAGE_LAYOUT_HWC, NULL, true);
@@ -58,19 +59,22 @@ int main(int argc, char **argv)
       libmaix_cv_image_draw_circle(rgb888, 200, 150, 30, MaixColor(0, 0, 255), 10);
 #endif
 
-      libmaix_cv_image_draw_rectangle(rgb888, 0, 0, 120, 22, MaixColor(255, 0, 255), 1);
-      libmaix_cv_image_draw_line(rgb888, 10, 10, 130, 120, MaixColor(255, 0, 255), 2);
+      //libmaix_cv_image_draw_rectangle(rgb888, 0, 0, 120, 22, MaixColor(255, 0, 255), 1);
+      //libmaix_cv_image_draw_line(rgb888, 10, 10, 130, 120, MaixColor(255, 0, 255), 2);
 
       int str_w = 0, str_h = 0;
 
+#if 0
       libmaix_cv_image_get_string_size(&str_w, &str_h, "[A|B|C|D][]!H/~`_-=", 1.5, 1);
 
       printf("textSize w %d h %d\r\n", str_w, str_h);
 
       libmaix_cv_image_draw_string(rgb888, 0, 0, "[A|B|C|D][]!H/~`_-=", 1.5, MaixColor(0, 255, 0), 1);
+#endif
 
       libmaix_cv_image_load_freetype("/home/res/sans.ttf");
 
+#if 0
       libmaix_cv_image_get_string_size(&str_w, &str_h, "[A|B|佬鼠][]!H/~`_-=", 1.5, 1);
 
       printf("textSize w %d h %d\r\n", str_w, str_h);
@@ -78,6 +82,8 @@ int main(int argc, char **argv)
       libmaix_cv_image_draw_string(rgb888, 0, 30, "[A|B|佬鼠][]!H/~`_-=", 1.5, MaixColor(0, 0, 255), 1);
 
       libmaix_cv_image_draw_string(rgb888, 0, 120, u8"123你好鸭asdにほんご", 2.8, MaixColor(55, 55, 55), 1);
+#endif
+      libmaix_cv_image_draw_string(rgb888, 0, 200, u8"我们爱小骆驼", 2.8, MaixColor(255, 155, 155), 1);
 
       disp->draw_image(disp, rgb888);
 
